@@ -1,12 +1,12 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 from data import make_image
 from data import random_org
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['SECRET_KEY'] = 'some_secret_key'
 
 API_TEMPLATE = 'https://www.random.org/'
 
@@ -20,6 +20,7 @@ NUM_TO_ROOM = {
 
 @app.route('/')
 def main():
+    # make_image.init_resources()
     # generate markers
 
     markers = random_org.get_random_range(0, 3)
@@ -55,6 +56,6 @@ def main():
 
 
 if __name__ == '__main__':
-    make_image.init_resources()
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    # port = int(os.environ.get("PORT", 7700))
+    # app.run(host='0.0.0.0', port=port)
+    app.run()

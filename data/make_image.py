@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 
 PATH_IMG = 'static/img/field_res/'
@@ -31,23 +32,39 @@ FRAME_SIZE = (624 // 8, 624 // 8)
 
 def init_resources():
     # cubes
-    cube_red = Image.new('RGB', CUBE_SIZE, color='red')
-    cube_yellow = Image.new('RGB', CUBE_SIZE, color='yellow')
-    cube_black = Image.new('RGB', CUBE_SIZE, color='black')
+    cube_red = Image.open(PATH_IMG + 'cube_red.png')
+    cube_yellow = Image.open(PATH_IMG + 'cube_yellow.png')
+    cube_black = Image.open(PATH_IMG + 'cube_black.png')
+
+    cube_red.thumbnail(CUBE_SIZE)
+    cube_yellow.thumbnail(CUBE_SIZE)
+    cube_black.thumbnail(CUBE_SIZE)
+
     cube_red.save(PATH_IMG + 'cube_red.png')
     cube_yellow.save(PATH_IMG + 'cube_yellow.png')
     cube_black.save(PATH_IMG + 'cube_black.png')
 
+    cube_red.show()
+
     # markers
-    marker_green = Image.new('RGB', MARKER_SIZE, color='green')
-    marker_white = Image.new('RGB', MARKER_SIZE, color='white')
+    marker_green = Image.open(PATH_IMG + 'marker_green.png')
+    marker_white = Image.open(PATH_IMG + 'marker_white.png')
+
+    marker_green.thumbnail(MARKER_SIZE)
+    marker_white.thumbnail(MARKER_SIZE)
+
     marker_green.save(PATH_IMG + 'marker_green.png')
     marker_white.save(PATH_IMG + 'marker_white.png')
 
     # frames
-    frame_red = Image.new('RGB', FRAME_SIZE, color='red')
-    frame_yellow = Image.new('RGB', FRAME_SIZE, color='yellow')
-    frame_black = Image.new('RGB', FRAME_SIZE, color='black')
+    frame_red = Image.open(PATH_IMG + 'frame_red.png')
+    frame_yellow = Image.open(PATH_IMG + 'frame_yellow.png')
+    frame_black = Image.open(PATH_IMG + 'frame_black.png')
+
+    frame_red.thumbnail(FRAME_SIZE)
+    frame_yellow.thumbnail(FRAME_SIZE)
+    frame_black.thumbnail(FRAME_SIZE)
+
     frame_red.save(PATH_IMG + 'frame_red.png')
     frame_yellow.save(PATH_IMG + 'frame_yellow.png')
     frame_black.save(PATH_IMG + 'frame_black.png')
@@ -84,7 +101,6 @@ def create_field(markers, frames, cubes) -> str:
     }
 
     with Image.open(PATH_IMG + 'wro_default.png') as img_field:
-        # markers
         img_field.paste(marker_green, MARKERS_NUM_TO_PIX_COORDS[markers[0]])
         img_field.paste(marker_green, MARKERS_NUM_TO_PIX_COORDS[markers[1]])
 
