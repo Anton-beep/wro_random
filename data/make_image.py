@@ -1,6 +1,6 @@
 from PIL import Image
 
-PATH_IMG = '../static/img/field_res/'
+PATH_IMG = 'static/img/field_res/'
 
 MARKERS_NUM_TO_PIX_COORDS = {
     0: (3513 // 8, 2919 // 8),

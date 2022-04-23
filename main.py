@@ -1,8 +1,10 @@
+import os
+
 from flask import Flask, render_template
 from flask import app
 
-import data.random_org
-import data.make_image
+from data import random_org
+from data import make_image
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -25,8 +27,8 @@ def main():
 
     # green markers 2 first
 
-    print(f'GREEN markers: {[NUM_TO_ROOM[marker] for marker in markers[:2]]}')
-    print(f'WHITE markers: {[NUM_TO_ROOM[marker] for marker in markers[2:]]}')
+    # print(f'GREEN markers: {[NUM_TO_ROOM[marker] for marker in markers[:2]]}')
+    # print(f'WHITE markers: {[NUM_TO_ROOM[marker] for marker in markers[2:]]}')
 
     # generate frames
 
@@ -39,14 +41,14 @@ def main():
         3: 'null'
     }
 
-    print(f'FRAMES: {[NUM_TO_COL[frame] for frame in frames]}')
+    # print(f'FRAMES: {[NUM_TO_COL[frame] for frame in frames]}')
 
     # generate cubes
 
     cubes = random_org.get_random_range(0, 3)
 
-    print(
-        f'CUBES: {[(NUM_TO_ROOM[el[0]], el[1]) for el in (enumerate([NUM_TO_COL[cube] for cube in cubes]))]}')
+    # print(
+    #     f'CUBES: {[(NUM_TO_ROOM[el[0]], el[1]) for el in (enumerate([NUM_TO_COL[cube] for cube in cubes]))]}')
 
     make_image.create_field(markers, frames, cubes)
 
@@ -55,4 +57,5 @@ def main():
 
 if __name__ == '__main__':
     make_image.init_resources()
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
