@@ -21358,11 +21358,11 @@ h6 {
 }
 .u-shading,
 .u-overlap.u-overlap-contrast .u-header {
-  color: #ffffff;
+  color: #000000;
 }
 .u-body {
-  color: #111111;
-  background-color: #ffffff;
+  color: #000000;
+  background-color: #000000;
   --effect-scale: 1.1;
 }
 /*end-variables color*/
