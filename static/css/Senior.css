@@ -1,0 +1,82 @@
+ .u-section-1 {
+  background-image: linear-gradient(black, black);
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 900px;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 24px auto 0;
+}
+
+.u-section-1 .u-image-1 {
+  width: 1093px;
+  height: 523px;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-image: none;
+  margin: 24px auto 47px 24px;
+  padding: 4px 27px 4px 26px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1199px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-style: normal;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 940px;
+    height: 450px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    text-transform: none;
+    margin-left: 0;
+  }
+}
+h1 { font-family: Comfortaa; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Comfortaa; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Comfortaa; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Comfortaa; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Comfortaa; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1000px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 720px;
+    height: 345px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 800px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 540px;
+    height: 259px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 600px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 340px;
+    height: 163px;
+  }
+}

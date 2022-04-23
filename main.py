@@ -1,10 +1,9 @@
 import os
 
 from flask import Flask, render_template
-from flask import app
 
-from data import random_org
 from data import make_image
+from data import random_org
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
