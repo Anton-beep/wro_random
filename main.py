@@ -20,37 +20,39 @@ NUM_TO_ROOM = {
 
 @app.route('/')
 def main():
-    # make_image.init_resources()
+    make_image.init_resources()
     # generate markers
 
     markers = random_org.get_random_range(0, 3)
 
-    # green markers 2 first
-
-    # print(f'GREEN markers: {[NUM_TO_ROOM[marker] for marker in markers[:2]]}')
-    # print(f'WHITE markers: {[NUM_TO_ROOM[marker] for marker in markers[2:]]}')
+    # 2 first are green markers positions
+    # 2 second are white markers positions
 
     # generate frames
 
     frames = random_org.get_random_range(0, 2)
 
-    NUM_TO_COL = {
-        0: 'black',
-        1: 'red',
-        2: 'yellow',
-        3: 'null'
-    }
-
-    # print(f'FRAMES: {[NUM_TO_COL[frame] for frame in frames]}')
+    # generate colors from 1 to 3 frame
+    # 0 -> black
+    # 1 -> red
+    # 2 -> yellow
 
     # generate cubes
 
     cubes = random_org.get_random_range(0, 3)
+    # generate cubes for yellow, red, green, blue room
+    # numbers to colors:
+    # 0 -> black
+    # 1 -> red
+    # 2 -> yellow
+    # 3 -> null
 
-    # print(
-    #     f'CUBES: {[(NUM_TO_ROOM[el[0]], el[1]) for el in (enumerate([NUM_TO_COL[cube] for cube in cubes]))]}')
+    # generate men
 
-    make_image.create_field(markers, frames, cubes)
+    men = random_org.get_random_range(0, 7)
+    # generates positions for null, null, yellow, green, red, blue, white, black
+
+    make_image.create_field(markers, frames, cubes, men)
 
     return render_template('index.html')
 
